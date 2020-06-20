@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content>
+    <div class="container" style="margin-top:10px">
+      <div class="row">
+          <div class="col-md-12 text-center">
+            <h3 class="display-4"> Kayıt Ol  </h3> 
+          </div>
+      </div>
+      <div class="row text-center">
+          <div class="col-md-12">
+                  <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Adınız" [formControl]="nameFormControl">
+                          <mat-error *ngIf="nameFormControl.hasError('minlength') && !nameFormControl.hasError('required')">
+                            Adınız en az  3 karakter olmalidır. 
+                          </mat-error>
+                          <mat-error *ngIf="nameFormControl.hasError('required')">
+                           Adınızı <strong>Giriniz</strong>
+                          </mat-error>
+                        </mat-form-field>
+                        <br><br>
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Email" [formControl]="emailFormControl">
+                            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                              Lütfen geçerli bir e posta Giriniz.
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                              e posta  <strong>Giriniz</strong>
+                            </mat-error>
+                          </mat-form-field>
+                          <br> <br>
+                          <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Şifreniz" type="password" [formControl]="passwordFormControl">
+                                  <mat-error *ngIf="passwordFormControl.hasError('minlength') && !passwordFormControl.hasError('required')">
+                                   Şifreniz en az 6 karakter olmalidir.
+                                  </mat-error>
+                                  <mat-error *ngIf="passwordFormControl.hasError('required')">
+                                    Şifre <strong>Giriniz</strong>
+                                  </mat-error>
+                                </mat-form-field>
+                                <br> <br> 
+                                <button mat-raised-button color="primary" (click)="register()">Kayıt Ol</button>
+                        </form>   
+                        
+          </div>
+          <div class="col-md-12 text-center clearfix" style="margin-top: 20px">
+            <p> Zaten bir hesabınız var mı? <button mat-raised-button color="accent" routerLink="/home">Giriş </button></p>
+          </div>
+       
+      </div>
+   
+  </div>
+  
+  
+  </ion-content>
+

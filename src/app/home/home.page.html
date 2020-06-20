@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Hoş Geldiniz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container" style="margin-top:10px">
+    <div class="row">
+        <div class="col-md-12 text-center">
+          <h3 class="display-4"> Ana Sayfa </h3> 
+        </div>
+    </div>
+  <div class="row text-center" style="margin-top:30px">
+      <div class="col-md-12">
+              <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Email" [formControl]="emailFormControl">
+                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                          Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                          Email addresi <strong>gereklidir</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      <br> <br>
+                      <mat-form-field class="example-full-width">
+                              <input matInput placeholder="Sifre" type="password" [formControl]="passwordFormControl">
+                              <mat-error *ngIf="passwordFormControl.hasError('minlength') && !passwordFormControl.hasError('required')">
+                                Şifreniz en az 6 karakter olmalıdır.
+                              </mat-error>
+                              <mat-error *ngIf="passwordFormControl.hasError('required')">
+                                Şifre  <strong>Giriniz</strong>
+                              </mat-error>
+                            </mat-form-field>
+                            <br> <br> 
+                            <button mat-raised-button color="primary" (click)="login()">Giriş</button>
+                    </form>   
+                    
+      </div>
+      <div class="col-md-12 text-center clearfix" style="margin-top: 20px">
+        <p> Henüz bir hesabın yok mu? <button mat-raised-button color="accent" routerLink="/signup">Kayıt Ol </button></p>
+      </div>
+   
+  </div>
+
+</div>
+
+
+
+</ion-content>
